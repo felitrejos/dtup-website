@@ -2,15 +2,15 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 
-const underlineVariants = {
+const underlineVariants: Variants = {
   initial: { scaleX: 0, originX: 0 },
-  enter: { scaleX: 1, originX: 0, transition: { duration: 0.2, ease: "easeInOut" } },
+  enter: { scaleX: 1, originX: 0, transition: { duration: 0.2, ease: "easeInOut" as const } },
   exit: (reverse: boolean) => ({
     scaleX: 0,
     originX: reverse ? 0 : 1,
-    transition: { duration: 0.2, ease: "easeInOut" },
+    transition: { duration: 0.2, ease: "easeInOut" as const },
   }),
 };
 
